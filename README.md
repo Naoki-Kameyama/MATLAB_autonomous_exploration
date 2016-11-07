@@ -1,2 +1,1 @@
-# MATLAB_autonomous_exploration
-for autonomous slam
+# MATLAB_autonomous_slam
