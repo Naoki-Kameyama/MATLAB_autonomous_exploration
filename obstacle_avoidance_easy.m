@@ -1,7 +1,7 @@
 rosshutdown
-rosinit('192.168.11.62')
+rosinit('IP')
 rostopic list
-tbot = turtlebot('192.168.11.62');
+tbot = turtlebot('IP');
 
 
  spinVelocity = 0.8;       % Angular velocity (rad/s)
