@@ -1,9 +1,9 @@
 %%
 %turtlebot recongnition
 rosshutdown
-rosinit('192.168.11.62')
+rosinit('IP')
 %rostopic list
-tbot = turtlebot('192.168.11.62');
+tbot = turtlebot('IP');
 [velPub, velMsg] = rospublisher('/mobile_base/commands/velocity');
    odom = getOdometry(tbot);
    
