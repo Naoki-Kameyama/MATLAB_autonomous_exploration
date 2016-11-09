@@ -1,9 +1,9 @@
 %%
 %turtlebot recongnition
 rosshutdown
-rosinit('192.168.11.62')
+rosinit('IP')
 rostopic list
-tbot = turtlebot('192.168.11.62');
+tbot = turtlebot('IP');
 [velPub, velMsg] = rospublisher('/mobile_base/commands/velocity');
 odom = getOdometry(tbot);
 laser = rossubscriber('/scan');
@@ -13,10 +13,6 @@ while true
     odom = getOdometry(tbot);
     odomList(i,:) = [odom.Position(1) odom.Position(2)];
 %plot(odomList(:,1),odomList(:,2))
-
-
-
-%%
 
 x = [];
 y = [];
@@ -60,14 +56,11 @@ l = 1;
 while true
     figure(3)
     scatter(target(1),target(2));
-      
-       
-    
+
     velMsg.Linear.X = 0.2;
     velMsg.Angular.Z = 0;
     velPub.send(velMsg);
-    
-    
+      
     odom = getOdometry(tbot); 
     odomList2(l,:) = [odom.Position(1) odom.Position(2)];
     figure(4)
@@ -96,7 +89,3 @@ end
 pause(1)
 i = i + 1;
 end
- % velMsg.Linear.X = 0;
-  %  velMsg.Angular.Z = 0;
-   %   velPub.send(velMsg);
-
