@@ -30,7 +30,7 @@ while true
     % Call VFH step method to computer steering direction
     steerDir = vfh.step(ranges, angles, targetDir);
     % Calculate velocities
-    if ~isnan(steerDir) % ‚à‚µsteerDir‚ª1‚¾‚Á‚½‚ç(‚à‚µsteerDir‚ª1‚¾‚Á‚½‚çNaN‚¶‚á‚È‚©‚½‚ç)
+    if ~isnan(steerDir) % ã‚‚ã—steerDirãŒ1ã ã£ãŸã‚‰(ã‚‚ã—steerDirãŒ1ã ã£ãŸã‚‰NaNã˜ã‚ƒãªã‹ãŸã‚‰)
         desiredV = 0.2;
         w = exampleHelperComputeAngularVelocity(steerDir, 1);%
         w1= exampleHelperComputeAngularVelocity(1, 1);%;
@@ -124,7 +124,7 @@ while true
     % Call VFH step method to computer steering direction
     steerDir = vfh.step(ranges, angles, targetDir);
     % Calculate velocities
-    if ~isnan(steerDir) % ‚à‚µsteerDir‚ª1‚¾‚Á‚½‚ç(‚à‚µsteerDir‚ª1‚¾‚Á‚½‚çNaN‚¶‚á‚È‚©‚½‚ç)
+    if ~isnan(steerDir)
         desiredV = 0.2;
         w = exampleHelperComputeAngularVelocity(steerDir, 1);%
         w1= exampleHelperComputeAngularVelocity(1, 1);%;
