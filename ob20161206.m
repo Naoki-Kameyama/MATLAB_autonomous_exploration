@@ -130,8 +130,8 @@ hold off
 
 targetmat = find(detect(:,2) == min(detect(:,2)));
 
-     detectxx = cos(odom.Orientation(1)).*detect(:,1) + (-sin(odom.Orientation(1))).*detect(:,2);
-     detectyy = sin(odom.Orientation(1)).*detect(:,1) + cos(odom.Orientation(1)).*detect(:,2);
+     detectxx = sin(odom.Orientation(1)).*detect(:,1) + cos(odom.Orientation(1)).*detect(:,2);
+     detectyy = cos(odom.Orientation(1)).*detect(:,1) + (-sin(odom.Orientation(1))).*detect(:,2);
      transpoint = [odom.Position(1)+detectxx(targetmat,1) odom.Position(2)+detectyy(targetmat,1)];
 
 figure(2)
