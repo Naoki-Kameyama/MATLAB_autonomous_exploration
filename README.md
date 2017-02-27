@@ -1,2 +1,3 @@
 # MATLAB_autonomous_slam
-Hello
+Hell!
+This is a autonomous mapping program for mobile robot with kinect.o
