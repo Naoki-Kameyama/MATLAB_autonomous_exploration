@@ -1,15 +1,16 @@
+close all
 clear all
-%%
+
 rosshutdown
 rosinit('ros1-HP-ProBook-450-G1')
 tbot = turtlebot('ros1-HP-ProBook-450-G1');
-%%
+
 %laser scan
 laserSub = rossubscriber('/scan');
-%%
+
 %velocity
 [velPub, velMsg] = rospublisher('/mobile_base/commands/velocity');
-%%
+
 %VFH parameter
 %   vfh = robotics.VectorFieldHistogram;%
 %   vfh.DistanceLimits = [0.05 0.65];%
@@ -151,12 +152,13 @@ while true
             laserScan = receive(laserSub);
             laserScan.Ranges(isnan(laserScan.Ranges(:,1))) = 0;
             S = sum(laserScan.Ranges(:,1));
-                if  S > 300    %if laser scan data is received, break
-                    break
-                end
+            if  S > 300    %if laser scan data is received, break
+                break
+            end
         end
         pause(1.5)
     end 
+
 %% target detection decision
     odom = getOdometry(tbot);
     laserScan = receive(laserSub);  
